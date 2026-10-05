@@ -1,0 +1,230 @@
+/* Just eSIM — tokens.css. Собирается из tokens/tokens.json командой npm run build, руками не править. */
+
+@font-face {
+  font-family: "Haffer";
+  src: local("Haffer Medium"), local("Haffer-Medium"), url("../fonts/HafferMedium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* фон и поверхности */
+  --color-main: #e7e6e2;
+  --color-bLanding: #f8f7f7;
+  --color-modalgray: #e4e3de;
+  --surface: #ffffff;
+  --surface-alt: #f5f5f5;
+  --surface-grey: #4a4a4a;
+  --surface-dark: #171717;
+  --surface-expired: #d1d0cc;
+  --surface-tile: #d4d3ce;
+  --glass: rgba(255,255,255,.8);
+
+  /* текст */
+  --ink: #000000;
+  --color-primary: rgba(0,0,0,.9);
+  --color-secondary: rgba(0,0,0,.6);
+  --text-inactive: rgba(0,0,0,.54);
+  --text-muted: rgba(0,0,0,.5);
+  --text-caption: rgba(0,0,0,.45);
+  --text-service: rgba(0,0,0,.2);
+  --text-on-dark: #f5f5f5;
+  --text-on-dark-secondary: #8c8c8c;
+
+  /* сплошные эквиваленты текста (слайды, печать) */
+  --solid-primary-on-main: #171717;
+  --solid-primary-on-white: #191919;
+  --solid-secondary-on-main: #5c5c5a;
+  --solid-secondary-on-white: #666666;
+  --solid-inactive-on-white: #757575;
+  --solid-muted-on-main: #747371;
+  --solid-muted-on-white: #808080;
+  --solid-caption-on-main: #7f7f7c;
+  --solid-caption-on-white: #8c8c8c;
+  --solid-service-on-main: #b9b8b5;
+  --solid-service-on-white: #cccccc;
+
+  /* линии, обводки, подложки, оверлеи */
+  --line: rgba(0,0,0,.1);
+  --line-faq: #00000010;
+  --stroke-secondary: rgba(0,0,0,.16);
+  --stroke-primary: rgba(255,255,255,.2);
+  --stroke-badge: rgba(255,255,255,.3);
+  --stroke-field: rgba(0,0,0,.2);
+  --fill-icon-button: rgba(0,0,0,.07);
+  --fill-track: rgba(0,0,0,.05);
+  --card-tint: rgba(0,0,0,.05);
+  --card-highlight: rgba(255,255,255,.7);
+  --overlay-cookie: rgba(0,0,0,.6);
+  --overlay-promo: rgba(0,0,0,.8);
+  --overlay-modal: rgba(0,0,0,.9);
+
+  /* акценты */
+  --grad-pink: #df0c99;
+  --grad-blue: #4d4de9;
+  --accent-green-dark: #0c5e10;
+  --accent-green: #34ff10;
+  --accent-terracotta: #ce4d12;
+  --focus: #4d4de9;
+
+  /* служебные (прод) */
+  --color-aqua: #0fa9b3;
+  --color-accent1: #635bff;
+  --color-good: #1c643a;
+  --color-error: #ff0000;
+  --gray-500: #6a7282;
+  --payment-gray: #aeadac;
+  --color-star: #ffbb47;
+
+  /* графики */
+  --chart-1: var(--ink);
+  --chart-2: var(--text-caption);
+  --chart-3: var(--text-service);
+  --chart-key: var(--accent-terracotta);
+  --chart-grid: var(--line);
+
+  /* тени */
+  --shadow-big: 0 4px 84px 0 rgba(0,0,0,.15), 0 2px 10px 0 rgba(0,0,0,.05);
+  --shadow-white: 0 0 12px 0 rgba(0,0,0,.08);
+  --shadow-logo: 0 3.5px 8.2px 0 rgba(9,19,44,.1);
+  --shadow-modal: 0 0 5px rgba(0,0,0,.1);
+
+  /* отступы */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-2\.5: 10px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7\.5: 30px;
+  --space-8: 32px;
+  --space-9: 36px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-15: 60px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-36: 144px;
+  --overlap-hero: -200px;
+  --overlap-card: -80px;
+  --anchor-offset: -40px;
+
+  /* радиусы */
+  --radius-pill: 999px;
+  --radius-sheet: 44px;
+  --radius-big: 40px;
+  --radius-mid: 32px;
+  --radius-modal: 30px;
+  --radius-promo: 28px;
+  --radius-inner: 24px;
+  --radius-cookie: 20px;
+  --radius-logo: 16px;
+  --radius-logo-m: 14px;
+  --radius-dropdown: 12px;
+  --radius-checkbox: 5px;
+
+  /* градиенты */
+  --grad: linear-gradient(90deg, rgba(223,12,153,.9) 0%, rgba(77,77,233,.9) 100%);
+  --grad-solid: linear-gradient(90deg, #df0c99 0%, #4d4de9 100%);
+  --card-bg: linear-gradient(rgba(0,0,0,.05) 0%, rgba(0,0,0,0) 100%), #fff;
+  --menu-gra: linear-gradient(#e7e6e2 50%, #e7e6e200 100%);
+  --expired-gra: linear-gradient(#d1d0cc00 37%, #d1d0cc 100%);
+
+  /* движение */
+  --duration-press: 75ms;
+  --duration-default: 150ms;
+  --duration-dropdown: 300ms;
+  --duration-faq: 500ms;
+  --duration-pulse: 2s;
+  --ease-default: cubic-bezier(.4, 0, .2, 1);
+  --ease-out: cubic-bezier(0, 0, .2, 1);
+  --ease-pulse: cubic-bezier(.4, 0, .6, 1);
+  --scale-press: 0.95;
+  --rotate-open: 225deg;
+  --rotate-rest: 45deg;
+
+  /* прозрачность состояний */
+  --opacity-press: 0.8;
+  --opacity-expired: 0.7;
+  --opacity-pulse: 0.5;
+
+  /* наклоны «предметов» */
+  --tilt-product-active: 1.5deg;
+  --tilt-product-expired: -3deg;
+  --tilt-balance: 6deg;
+  --tilt-code: 7deg;
+  --tilt-invite: -5deg;
+  --tilt-stack-left: -10deg;
+  --tilt-stack-right: 15deg;
+
+  /* раскладка */
+  --content: 1024px;
+  --content-header: 1212px;
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --modal-width: 560px;
+  --modal-medium: 768px;
+  --modal-wide: 1160px;
+  --cookie-width: 910px;
+  --widget-width: 370px;
+  --checklist-width: 360px;
+  --product-card-width: 340px;
+  --store-buttons-width: 600px;
+  --button-max: 300px;
+  --slide-width: 1920px;
+  --slide-height: 1080px;
+  --slide-columns: 12;
+  --slide-column: 122px;
+
+  /* размеры */
+  --button-m: 48px;
+  --button-l: 56px;
+  --button-xl: 80px;
+  --logo-tile: 48px;
+  --logo-tile-m: 56px;
+  --icon: 20px;
+  --chip: 40px;
+  --badge: 36px;
+  --close-button: 56px;
+  --social: 50px;
+  --flag: 16px;
+
+  /* шрифты */
+  --font-primary: "Haffer", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+/* стили текста — Веб · заголовки */
+.h1 { font-family: var(--font-primary); font-size: 148px; line-height: 92%; font-weight: 500; letter-spacing: -0.03em; }
+.h2 { font-family: var(--font-primary); font-size: 80px; line-height: 92%; font-weight: 500; letter-spacing: -0.03em; }
+.text-g { font-family: var(--font-primary); font-size: 52px; line-height: 92%; font-weight: 500; letter-spacing: -0.03em; }
+.number { font-family: var(--font-primary); font-size: 90px; line-height: 150%; font-weight: 500; letter-spacing: -0.04em; }
+
+/* стили текста — Веб · текст */
+.text-bd { font-family: var(--font-primary); font-size: 42px; line-height: 120%; font-weight: 500; letter-spacing: -0.16px; }
+.text-big { font-family: var(--font-primary); font-size: 32px; line-height: 105%; font-weight: 500; letter-spacing: -0.16px; }
+.text-social { font-family: var(--font-primary); font-size: 27px; line-height: 100%; font-weight: 500; letter-spacing: -0.16px; }
+.text-b { font-family: var(--font-primary); font-size: 22px; line-height: 120%; font-weight: 500; letter-spacing: -0.16px; }
+.text-xl { font-family: var(--font-primary); font-size: 20px; line-height: 120%; font-weight: 500; letter-spacing: -0.16px; }
+.text-lg { font-family: var(--font-primary); font-size: 18px; line-height: 28px; font-weight: 500; letter-spacing: -0.16px; }
+.text-base { font-family: var(--font-primary); font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: -0.16px; }
+.review { font-family: var(--font-primary); font-size: 16px; line-height: 140%; font-weight: 500; letter-spacing: -0.16px; }
+.text-sm { font-family: var(--font-primary); font-size: 14px; line-height: 20px; font-weight: 500; letter-spacing: -0.16px; }
+.text-xs { font-family: var(--font-primary); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: -0.16px; }
+
+/* стили текста — Код */
+.code { font-family: var(--font-mono); font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: 0px; }
+
+/* стили текста — Презентации 1920×1080 */
+.slide-number { font-family: var(--font-primary); font-size: 200px; line-height: 92%; font-weight: 500; letter-spacing: -0.04em; }
+.slide-display { font-family: var(--font-primary); font-size: 160px; line-height: 92%; font-weight: 500; letter-spacing: -0.03em; }
+.slide-title { font-family: var(--font-primary); font-size: 96px; line-height: 92%; font-weight: 500; letter-spacing: -0.03em; }
+.slide-lead { font-family: var(--font-primary); font-size: 42px; line-height: 120%; font-weight: 500; letter-spacing: -0.16px; }
+.slide-card-title { font-family: var(--font-primary); font-size: 42px; line-height: 105%; font-weight: 500; letter-spacing: -0.16px; }
+.slide-body { font-family: var(--font-primary); font-size: 32px; line-height: 120%; font-weight: 500; letter-spacing: -0.16px; }
+.slide-caption { font-family: var(--font-primary); font-size: 24px; line-height: 120%; font-weight: 500; letter-spacing: -0.16px; }

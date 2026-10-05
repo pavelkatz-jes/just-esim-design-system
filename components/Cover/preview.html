@@ -1,0 +1,72 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../bundle.css">
+<script src="../lib/react.production.min.js"></script>
+<script src="../lib/react-dom.production.min.js"></script>
+<script src="../bundle.js"></script>
+<meta charset="utf-8">
+<title>Just eSIM</title>
+<style>
+  html, body { margin: 0; height: 100%; }
+  body { background: var(--color-main); color: var(--ink); font-family: var(--font-primary); font-weight: 500; overflow: hidden; }
+  .cover { position: relative; width: 960px; height: 288px; overflow: hidden; }
+  /* композиция — в коробке справа от x = 480, имя и подпись её не пересекают */
+  .art { position: absolute; top: 0; left: 480px; width: 480px; height: 288px; overflow: hidden; }
+  .art svg { display: block; width: 480px; height: 288px; overflow: visible; }
+  .grey { fill: var(--surface-grey); }
+  .ink { fill: var(--ink); }
+  .white { fill: var(--surface); }
+  .card { filter: drop-shadow(0 4px 42px rgba(0, 0, 0, .15)) drop-shadow(0 2px 5px rgba(0, 0, 0, .05)); }
+  .tile { rx: var(--radius-big); }
+  .chip { fill: var(--surface); filter: drop-shadow(0 0 6px rgba(0, 0, 0, .08)); }
+  .stop-a { stop-color: var(--grad-pink); }
+  .stop-b { stop-color: var(--grad-blue); }
+  .words { position: absolute; left: 48px; bottom: 40px; max-width: 440px; }
+  .name { margin: 0; color: var(--ink); font-size: 80px; font-weight: 500; line-height: .92; letter-spacing: -0.03em; white-space: nowrap; }
+  .tag { margin: 12px 0 0 2px; color: var(--color-secondary); font-size: 14px; line-height: 20px; letter-spacing: -0.16px; }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+  blocks      surface-grey 176 tile −10° bled off the top · ink 176 tile 15° bled off the right · surface 168 card in front with shadow-big · one grad-solid pill 88×32 — ≈30% of 960×288
+  arrangement the brand's tilted «objects» stack (glass tiles −10° / 15°, top one straight), bottoms clear of a chip band
+  pattern     pills, from «кнопки, пилюли, бейджи, чипы — радиус 999» and the plan chips under the expired card: 12 white chips (shadow-white) in two staggered rows
+  scales      tiles 176/168 with rx radius-big 40; chips 24 tall (rx 12 = half), widths in 8 px steps, gaps space-3 12, rows space-3 apart; badge 32 tall, rx 16
+-->
+<defs>
+  <linearGradient id="jes-grad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" class="stop-a"/>
+    <stop offset="1" class="stop-b"/>
+  </linearGradient>
+</defs>
+<rect class="chip" x="8" y="226" width="56" height="24" rx="12"/>
+<rect class="chip" x="76" y="226" width="88" height="24" rx="12"/>
+<rect class="chip" x="176" y="226" width="64" height="24" rx="12"/>
+<rect class="chip" x="252" y="226" width="96" height="24" rx="12"/>
+<rect class="chip" x="360" y="226" width="48" height="24" rx="12"/>
+<rect class="chip" x="420" y="226" width="80" height="24" rx="12"/>
+<rect class="chip" x="32" y="262" width="80" height="24" rx="12"/>
+<rect class="chip" x="124" y="262" width="48" height="24" rx="12"/>
+<rect class="chip" x="184" y="262" width="104" height="24" rx="12"/>
+<rect class="chip" x="300" y="262" width="56" height="24" rx="12"/>
+<rect class="chip" x="368" y="262" width="72" height="24" rx="12"/>
+<rect class="chip" x="452" y="262" width="64" height="24" rx="12"/>
+<rect class="grey tile" x="28" y="-24" width="176" height="176" rx="40" transform="rotate(-10 116 64)"/>
+<rect class="ink tile" x="318" y="-4" width="176" height="176" rx="40" transform="rotate(15 406 84)"/>
+<rect class="white tile card" x="172" y="20" width="168" height="168" rx="40"/>
+<rect x="240" y="36" width="88" height="32" rx="16" fill="url(#jes-grad)"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Just eSIM</h1>
+<p class="tag">Тёплый фон, белые карточки, один шрифт и один вес.</p>
+</div>
+</div>
+</body>
+</html>

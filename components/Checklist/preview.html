@@ -1,0 +1,37 @@
+<!-- @dsCard group="Контент" height=300 -->
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checklist — Just eSIM</title>
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../bundle.css">
+<script src="../lib/react.production.min.js"></script>
+<script src="../lib/react-dom.production.min.js"></script>
+<script src="../bundle.js"></script>
+<style>
+.pv { padding: 24px; }
+.pv-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.pv-col { display: flex; flex-direction: column; gap: 24px; }
+.pv-label { margin-bottom: 8px; color: var(--color-secondary); font-size: 14px; line-height: 20px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var J = window.JeS;
+var B = { "flagUs": "../../assets/Flags/us.svg", "flagRu": "../../assets/Flags/ru.svg", "flagDe": "../../assets/Flags/de.svg", "flagEs": "../../assets/Flags/es.png", "glassHero": "../../assets/Glass/glass-esim-hero.webp", "glassSquare": "../../assets/Glass/glass-esim-square.webp", "glassEsim": "../../assets/Glass/glass-esim.webp", "glassUs": "../../assets/Glass/glass-us.webp", "glassIl": "../../assets/Glass/glass-il.webp", "glassCg": "../../assets/Glass/glass-cg.webp", "bird": "../../assets/Photos/bird.webp", "pizza": "../../assets/Photos/pizza.webp", "ball": "../../assets/Photos/ball.webp", "cardCd": "../../assets/Photos/card-cd.webp", "cardNl": "../../assets/Photos/card-nl.webp" };
+var LINKS = [{ label: "150+ destinations", href: "#" }, { label: "How to install", href: "#" }, { label: "FAQ", href: "#" }];
+var EN = { code: "en", label: "English", flag: B.flagUs };
+var RU = { code: "ru", label: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439", flag: B.flagRu };
+function L(props) {
+  return /* @__PURE__ */ React.createElement("div", { className: "pv-label" }, props.children);
+}
+function App() {
+  return /* @__PURE__ */ React.createElement("div", { className: "pv" }, /* @__PURE__ */ React.createElement(J.Checklist, { items: ["Keep your regular SIM installed", "Cannot be lost or stolen", "Multiple plans on one device", "Environmentally friendly"] }));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));
+</script>
+</body>
+</html>

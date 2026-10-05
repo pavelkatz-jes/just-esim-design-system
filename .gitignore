@@ -1,0 +1,9 @@
+node_modules/
+.types/
+.DS_Store
+*.log
+# лицензионный шрифт — в репозиторий не кладём
+fonts/*.woff2
+fonts/*.woff
+fonts/*.ttf
+fonts/*.otf

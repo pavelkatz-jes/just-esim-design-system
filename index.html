@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Just eSIM — дизайн-система</title>
+<link rel="stylesheet" href="tokens/tokens.css">
+<style>
+  body { margin: 0; background: var(--color-main); color: var(--color-primary); font-family: var(--font-primary); font-weight: 500; letter-spacing: -0.16px; -webkit-font-smoothing: antialiased; }
+  main { max-width: 1120px; margin: 0 auto; padding: 48px 24px 96px; }
+  a { color: var(--ink); }
+  code { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0; }
+  h1 { margin: 0 0 16px; color: var(--ink); font-size: 80px; font-weight: 500; line-height: 92%; letter-spacing: -0.03em; }
+  h2 { margin: 72px 0 24px; color: var(--ink); font-size: 32px; font-weight: 500; line-height: 105%; }
+  h3 { margin: 40px 0 16px; color: var(--color-secondary); font-size: 18px; font-weight: 500; }
+  .lead { max-width: 720px; margin: 0 0 24px; color: var(--color-secondary); font-size: 22px; line-height: 120%; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 18px; }
+  .cover { margin: 40px 0 0; border-radius: 24px; overflow: hidden; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
+  .sw { display: flex; flex-direction: column; gap: 4px; padding: 8px 8px 12px; background: var(--surface); border-radius: 16px; font-size: 12px; color: var(--color-secondary); }
+  .sw .chip { height: 56px; border-radius: 10px; box-shadow: inset 0 0 0 1px var(--line); margin-bottom: 4px; }
+  .sw code { color: var(--ink); }
+  .ty { display: grid; grid-template-columns: 180px 1fr; gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .ty-meta { display: flex; flex-direction: column; gap: 2px; color: var(--color-secondary); font-size: 13px; }
+  .ty-meta code { color: var(--ink); }
+  .ty-sample { color: var(--ink); overflow-wrap: anywhere; }
+  .card { margin: 0 0 24px; background: var(--surface); border-radius: 24px; box-shadow: var(--shadow-white); overflow: hidden; }
+  .card-head { display: flex; justify-content: space-between; gap: 16px; padding: 14px 20px; border-bottom: 1px solid var(--line); font-size: 16px; }
+  .card-head span { color: var(--color-secondary); font-size: 14px; }
+  .frame { position: relative; overflow: hidden; background: var(--color-main); }
+  .frame iframe { display: block; border: 0; transform-origin: 0 0; }
+  @media (max-width: 640px) { h1 { font-size: 48px; } .ty { grid-template-columns: 1fr; gap: 8px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Just eSIM —<br>дизайн-система</h1>
+  <p class="lead">Токены, компоненты и правила бренда. Описание целиком — в design.md, правила по разделам — в docs/.</p>
+  <div class="links"><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/design.md">design.md</a><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/docs/brand-book.md">Брендбук</a><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/docs/web.md">Веб</a><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/docs/presentations.md">Презентации</a><a href="tokens/tokens.css">tokens.css</a><a href="https://github.com/pavelkatz-jes/just-esim-design-system">GitHub</a></div>
+  <div class="cover frame" data-w="960" data-h="288"><iframe src="components/Cover/preview.html" title="Обложка"></iframe></div>
+  <h2>Цвета</h2>
+  <div class="grid">
+<div class="sw"><div class="chip" style="background:var(--color-main)"></div><code>color-main</code><span>#e7e6e2</span></div>
+<div class="sw"><div class="chip" style="background:var(--color-bLanding)"></div><code>color-bLanding</code><span>#f8f7f7</span></div>
+<div class="sw"><div class="chip" style="background:var(--color-modalgray)"></div><code>color-modalgray</code><span>#e4e3de</span></div>
+<div class="sw"><div class="chip" style="background:var(--surface)"></div><code>surface</code><span>#ffffff</span></div>
+<div class="sw"><div class="chip" style="background:var(--surface-alt)"></div><code>surface-alt</code><span>#f5f5f5</span></div>
+<div class="sw"><div class="chip" style="background:var(--surface-grey)"></div><code>surface-grey</code><span>#4a4a4a</span></div>
+<div class="sw"><div class="chip" style="background:var(--surface-dark)"></div><code>surface-dark</code><span>#171717</span></div>
+<div class="sw"><div class="chip" style="background:var(--surface-expired)"></div><code>surface-expired</code><span>#d1d0cc</span></div>
+<div class="sw"><div class="chip" style="background:var(--surface-tile)"></div><code>surface-tile</code><span>#d4d3ce</span></div>
+<div class="sw"><div class="chip" style="background:var(--glass)"></div><code>glass</code><span>rgba(255,255,255,.8)</span></div>
+<div class="sw"><div class="chip" style="background:var(--ink)"></div><code>ink</code><span>#000000</span></div>
+<div class="sw"><div class="chip" style="background:var(--color-primary)"></div><code>color-primary</code><span>rgba(0,0,0,.9)</span></div>
+<div class="sw"><div class="chip" style="background:var(--color-secondary)"></div><code>color-secondary</code><span>rgba(0,0,0,.6)</span></div>
+<div class="sw"><div class="chip" style="background:var(--text-inactive)"></div><code>text-inactive</code><span>rgba(0,0,0,.54)</span></div>
+<div class="sw"><div class="chip" style="background:var(--text-muted)"></div><code>text-muted</code><span>rgba(0,0,0,.5)</span></div>
+<div class="sw"><div class="chip" style="background:var(--text-caption)"></div><code>text-caption</code><span>rgba(0,0,0,.45)</span></div>
+<div class="sw"><div class="chip" style="background:var(--text-service)"></div><code>text-service</code><span>rgba(0,0,0,.2)</span></div>
+<div class="sw"><div class="chip" style="background:var(--text-on-dark)"></div><code>text-on-dark</code><span>#f5f5f5</span></div>
+<div class="sw"><div class="chip" style="background:var(--text-on-dark-secondary)"></div><code>text-on-dark-secondary</code><span>#8c8c8c</span></div>
+<div class="sw"><div class="chip" style="background:var(--solid-primary-on-main)"></div><code>solid-primary-on-main</code><span>#171717</span></div>
+<div class="sw"><div class="chip" style="background:var(--solid-primary-on-white)"></div><code>solid-primary-on-white</code><span>#191919</span></div>
+<div class="sw"><div class="chip" style="background:var(--solid-secondary-on-main)"></div><code>solid-secondary-on-main</code><span>#5c5c5a</span></div>
+<div class="sw"><div class="chip" style="background:var(--solid-secondary-on-white)"></div><code>solid-secondary-on-white</code><span>#666666</span></div>
+<div class="sw"><div class="chip" style="background:var(--solid-inactive-on-white)"></div><code>solid-inactive-on-white</code><span>#757575</span></div>
+<div class="sw"><div class="chip" style="background:var(--solid-muted-on-main)"></div><code>solid-muted-on-main</code><span>#747371</span></div>
+<div class="sw"><div class="chip" style="background:var(--solid-muted-on-white)"></div><code>solid-muted-on-white</code><span>#808080</span></div>
+<div class="sw"><div class="chip" style="background:var(--solid-caption-on-main)"></div><code>solid-caption-on-main</code><span>#7f7f7c</span></div>
+<div class="sw"><div class="chip" style="background:var(--solid-caption-on-white)"></div><code>solid-caption-on-white</code><span>#8c8c8c</span></div>
+<div class="sw"><div class="chip" style="background:var(--solid-service-on-main)"></div><code>solid-service-on-main</code><span>#b9b8b5</span></div>
+<div class="sw"><div class="chip" style="background:var(--solid-service-on-white)"></div><code>solid-service-on-white</code><span>#cccccc</span></div>
+<div class="sw"><div class="chip" style="background:var(--line)"></div><code>line</code><span>rgba(0,0,0,.1)</span></div>
+<div class="sw"><div class="chip" style="background:var(--line-faq)"></div><code>line-faq</code><span>#00000010</span></div>
+<div class="sw"><div class="chip" style="background:var(--stroke-secondary)"></div><code>stroke-secondary</code><span>rgba(0,0,0,.16)</span></div>
+<div class="sw"><div class="chip" style="background:var(--stroke-primary)"></div><code>stroke-primary</code><span>rgba(255,255,255,.2)</span></div>
+<div class="sw"><div class="chip" style="background:var(--stroke-badge)"></div><code>stroke-badge</code><span>rgba(255,255,255,.3)</span></div>
+<div class="sw"><div class="chip" style="background:var(--stroke-field)"></div><code>stroke-field</code><span>rgba(0,0,0,.2)</span></div>
+<div class="sw"><div class="chip" style="background:var(--fill-icon-button)"></div><code>fill-icon-button</code><span>rgba(0,0,0,.07)</span></div>
+<div class="sw"><div class="chip" style="background:var(--fill-track)"></div><code>fill-track</code><span>rgba(0,0,0,.05)</span></div>
+<div class="sw"><div class="chip" style="background:var(--card-tint)"></div><code>card-tint</code><span>rgba(0,0,0,.05)</span></div>
+<div class="sw"><div class="chip" style="background:var(--card-highlight)"></div><code>card-highlight</code><span>rgba(255,255,255,.7)</span></div>
+<div class="sw"><div class="chip" style="background:var(--overlay-cookie)"></div><code>overlay-cookie</code><span>rgba(0,0,0,.6)</span></div>
+<div class="sw"><div class="chip" style="background:var(--overlay-promo)"></div><code>overlay-promo</code><span>rgba(0,0,0,.8)</span></div>
+<div class="sw"><div class="chip" style="background:var(--overlay-modal)"></div><code>overlay-modal</code><span>rgba(0,0,0,.9)</span></div>
+<div class="sw"><div class="chip" style="background:var(--grad-pink)"></div><code>grad-pink</code><span>#df0c99</span></div>
+<div class="sw"><div class="chip" style="background:var(--grad-blue)"></div><code>grad-blue</code><span>#4d4de9</span></div>
+<div class="sw"><div class="chip" style="background:var(--accent-green-dark)"></div><code>accent-green-dark</code><span>#0c5e10</span></div>
+<div class="sw"><div class="chip" style="background:var(--accent-green)"></div><code>accent-green</code><span>#34ff10</span></div>
+<div class="sw"><div class="chip" style="background:var(--accent-terracotta)"></div><code>accent-terracotta</code><span>#ce4d12</span></div>
+<div class="sw"><div class="chip" style="background:var(--focus)"></div><code>focus</code><span>#4d4de9</span></div>
+<div class="sw"><div class="chip" style="background:var(--color-aqua)"></div><code>color-aqua</code><span>#0fa9b3</span></div>
+<div class="sw"><div class="chip" style="background:var(--color-accent1)"></div><code>color-accent1</code><span>#635bff</span></div>
+<div class="sw"><div class="chip" style="background:var(--color-good)"></div><code>color-good</code><span>#1c643a</span></div>
+<div class="sw"><div class="chip" style="background:var(--color-error)"></div><code>color-error</code><span>#ff0000</span></div>
+<div class="sw"><div class="chip" style="background:var(--gray-500)"></div><code>gray-500</code><span>#6a7282</span></div>
+<div class="sw"><div class="chip" style="background:var(--payment-gray)"></div><code>payment-gray</code><span>#aeadac</span></div>
+<div class="sw"><div class="chip" style="background:var(--color-star)"></div><code>color-star</code><span>#ffbb47</span></div>
+  </div>
+  <h2>Типографика</h2>
+<div class="ty"><div class="ty-meta"><code>h1</code><span>148px / 92%</span></div><div class="h1 ty-sample">The ultimate travel eSIM</div></div>
+<div class="ty"><div class="ty-meta"><code>h2</code><span>80px / 92%</span></div><div class="h2 ty-sample">One eSIM The whole world</div></div>
+<div class="ty"><div class="ty-meta"><code>text-g</code><span>52px / 92%</span></div><div class="text-g ty-sample">Privacy Policy</div></div>
+<div class="ty"><div class="ty-meta"><code>number</code><span>90px / 150%</span></div><div class="number ty-sample">€62</div></div>
+<div class="ty"><div class="ty-meta"><code>text-bd</code><span>42px / 120%</span></div><div class="text-bd ty-sample">Travel smarter and avoid paying expensive data roaming fees.</div></div>
+<div class="ty"><div class="ty-meta"><code>text-big</code><span>32px / 105%</span></div><div class="text-big ty-sample">Get the fastest customer support</div></div>
+<div class="ty"><div class="ty-meta"><code>text-social</code><span>27px / 100%</span></div><div class="text-social ty-sample">Follow us on social media</div></div>
+<div class="ty"><div class="ty-meta"><code>text-b</code><span>22px / 120%</span></div><div class="text-b ty-sample">Simple installation, automatic activation</div></div>
+<div class="ty"><div class="ty-meta"><code>text-xl</code><span>20px / 120%</span></div><div class="text-xl ty-sample">Track your expenses</div></div>
+<div class="ty"><div class="ty-meta"><code>text-lg</code><span>18px / 28px</span></div><div class="text-lg ty-sample">Download app</div></div>
+<div class="ty"><div class="ty-meta"><code>text-base</code><span>16px / 24px</span></div><div class="text-base ty-sample">150+ destinations</div></div>
+<div class="ty"><div class="ty-meta"><code>review</code><span>16px / 140%</span></div><div class="review ty-sample">The internet is fast and stable, no unexpected drop-offs.</div></div>
+<div class="ty"><div class="ty-meta"><code>text-sm</code><span>14px / 20px</span></div><div class="text-sm ty-sample">Expires in 14 days</div></div>
+<div class="ty"><div class="ty-meta"><code>text-xs</code><span>12px / 16px</span></div><div class="text-xs ty-sample">Your balance</div></div>
+<div class="ty"><div class="ty-meta"><code>code</code><span>16px / 24px</span></div><div class="code ty-sample">app.justesim.com/?promocode=NX2025</div></div>
+<div class="ty"><div class="ty-meta"><code>slide-number</code><span>200px / 92%</span></div><div class="slide-number ty-sample">150+</div></div>
+<div class="ty"><div class="ty-meta"><code>slide-display</code><span>160px / 92%</span></div><div class="slide-display ty-sample">One eSIM</div></div>
+<div class="ty"><div class="ty-meta"><code>slide-title</code><span>96px / 92%</span></div><div class="slide-title ty-sample">Earn 3 € with each friend</div></div>
+<div class="ty"><div class="ty-meta"><code>slide-lead</code><span>42px / 120%</span></div><div class="slide-lead ty-sample">Install Just eSIM in minutes and start saving.</div></div>
+<div class="ty"><div class="ty-meta"><code>slide-card-title</code><span>42px / 105%</span></div><div class="slide-card-title ty-sample">Money Back Guarantee</div></div>
+<div class="ty"><div class="ty-meta"><code>slide-body</code><span>32px / 120%</span></div><div class="slide-body ty-sample">Keep your regular SIM installed</div></div>
+<div class="ty"><div class="ty-meta"><code>slide-caption</code><span>24px / 120%</span></div><div class="slide-caption ty-sample">Source: Just eSIM, 2026</div></div>
+  <h2>Компоненты</h2>
+<h3>Бренд</h3>
+<section class="card" id="LogoTile"><div class="card-head"><b>LogoTile</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/LogoTile/README.md">README</a> · <a href="components/LogoTile/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="190"><iframe src="components/LogoTile/preview.html" loading="lazy" title="LogoTile"></iframe></div></section>
+<section class="card" id="Icon"><div class="card-head"><b>Icon</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/Icon/README.md">README</a> · <a href="components/Icon/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="760"><iframe src="components/Icon/preview.html" loading="lazy" title="Icon"></iframe></div></section>
+<section class="card" id="GradientText"><div class="card-head"><b>GradientText</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/GradientText/README.md">README</a> · <a href="components/GradientText/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="280"><iframe src="components/GradientText/preview.html" loading="lazy" title="GradientText"></iframe></div></section>
+<h3>Кнопки</h3>
+<section class="card" id="Button"><div class="card-head"><b>Button</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/Button/README.md">README</a> · <a href="components/Button/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="380"><iframe src="components/Button/preview.html" loading="lazy" title="Button"></iframe></div></section>
+<section class="card" id="StoreButtons"><div class="card-head"><b>StoreButtons</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/StoreButtons/README.md">README</a> · <a href="components/StoreButtons/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="140"><iframe src="components/StoreButtons/preview.html" loading="lazy" title="StoreButtons"></iframe></div></section>
+<h3>Поверхности</h3>
+<section class="card" id="Card"><div class="card-head"><b>Card</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/Card/README.md">README</a> · <a href="components/Card/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="430"><iframe src="components/Card/preview.html" loading="lazy" title="Card"></iframe></div></section>
+<section class="card" id="DarkCard"><div class="card-head"><b>DarkCard</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/DarkCard/README.md">README</a> · <a href="components/DarkCard/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="250"><iframe src="components/DarkCard/preview.html" loading="lazy" title="DarkCard"></iframe></div></section>
+<h3>Продукт</h3>
+<section class="card" id="ProductCard"><div class="card-head"><b>ProductCard</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/ProductCard/README.md">README</a> · <a href="components/ProductCard/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="520"><iframe src="components/ProductCard/preview.html" loading="lazy" title="ProductCard"></iframe></div></section>
+<section class="card" id="Badge"><div class="card-head"><b>Badge</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/Badge/README.md">README</a> · <a href="components/Badge/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="110"><iframe src="components/Badge/preview.html" loading="lazy" title="Badge"></iframe></div></section>
+<section class="card" id="PlanChip"><div class="card-head"><b>PlanChip</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/PlanChip/README.md">README</a> · <a href="components/PlanChip/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="100"><iframe src="components/PlanChip/preview.html" loading="lazy" title="PlanChip"></iframe></div></section>
+<section class="card" id="PurchaseWidget"><div class="card-head"><b>PurchaseWidget</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/PurchaseWidget/README.md">README</a> · <a href="components/PurchaseWidget/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="500"><iframe src="components/PurchaseWidget/preview.html" loading="lazy" title="PurchaseWidget"></iframe></div></section>
+<section class="card" id="SelectField"><div class="card-head"><b>SelectField</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/SelectField/README.md">README</a> · <a href="components/SelectField/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="150"><iframe src="components/SelectField/preview.html" loading="lazy" title="SelectField"></iframe></div></section>
+<section class="card" id="Segmented"><div class="card-head"><b>Segmented</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/Segmented/README.md">README</a> · <a href="components/Segmented/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="170"><iframe src="components/Segmented/preview.html" loading="lazy" title="Segmented"></iframe></div></section>
+<h3>Навигация</h3>
+<section class="card" id="Header"><div class="card-head"><b>Header</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/Header/README.md">README</a> · <a href="components/Header/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="1440" data-h="330"><iframe src="components/Header/preview.html" loading="lazy" title="Header"></iframe></div></section>
+<section class="card" id="LanguageSelect"><div class="card-head"><b>LanguageSelect</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/LanguageSelect/README.md">README</a> · <a href="components/LanguageSelect/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="190"><iframe src="components/LanguageSelect/preview.html" loading="lazy" title="LanguageSelect"></iframe></div></section>
+<section class="card" id="MobileMenu"><div class="card-head"><b>MobileMenu</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/MobileMenu/README.md">README</a> · <a href="components/MobileMenu/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="680"><iframe src="components/MobileMenu/preview.html" loading="lazy" title="MobileMenu"></iframe></div></section>
+<section class="card" id="Footer"><div class="card-head"><b>Footer</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/Footer/README.md">README</a> · <a href="components/Footer/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="1280" data-h="420"><iframe src="components/Footer/preview.html" loading="lazy" title="Footer"></iframe></div></section>
+<section class="card" id="SocialLinks"><div class="card-head"><b>SocialLinks</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/SocialLinks/README.md">README</a> · <a href="components/SocialLinks/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="150"><iframe src="components/SocialLinks/preview.html" loading="lazy" title="SocialLinks"></iframe></div></section>
+<h3>Контент</h3>
+<section class="card" id="Section"><div class="card-head"><b>Section</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/Section/README.md">README</a> · <a href="components/Section/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="1280" data-h="920"><iframe src="components/Section/preview.html" loading="lazy" title="Section"></iframe></div></section>
+<section class="card" id="SectionTitle"><div class="card-head"><b>SectionTitle</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/SectionTitle/README.md">README</a> · <a href="components/SectionTitle/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="1280" data-h="390"><iframe src="components/SectionTitle/preview.html" loading="lazy" title="SectionTitle"></iframe></div></section>
+<section class="card" id="Hero"><div class="card-head"><b>Hero</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/Hero/README.md">README</a> · <a href="components/Hero/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="1440" data-h="1360"><iframe src="components/Hero/preview.html" loading="lazy" title="Hero"></iframe></div></section>
+<section class="card" id="FeatureCard"><div class="card-head"><b>FeatureCard</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/FeatureCard/README.md">README</a> · <a href="components/FeatureCard/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="1280" data-h="1240"><iframe src="components/FeatureCard/preview.html" loading="lazy" title="FeatureCard"></iframe></div></section>
+<section class="card" id="ListRows"><div class="card-head"><b>ListRows</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/ListRows/README.md">README</a> · <a href="components/ListRows/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="280"><iframe src="components/ListRows/preview.html" loading="lazy" title="ListRows"></iframe></div></section>
+<section class="card" id="Checklist"><div class="card-head"><b>Checklist</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/Checklist/README.md">README</a> · <a href="components/Checklist/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="300"><iframe src="components/Checklist/preview.html" loading="lazy" title="Checklist"></iframe></div></section>
+<section class="card" id="Faq"><div class="card-head"><b>Faq</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/Faq/README.md">README</a> · <a href="components/Faq/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="640"><iframe src="components/Faq/preview.html" loading="lazy" title="Faq"></iframe></div></section>
+<section class="card" id="ReferralCards"><div class="card-head"><b>ReferralCards</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/ReferralCards/README.md">README</a> · <a href="components/ReferralCards/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="470"><iframe src="components/ReferralCards/preview.html" loading="lazy" title="ReferralCards"></iframe></div></section>
+<section class="card" id="Review"><div class="card-head"><b>Review</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/Review/README.md">README</a> · <a href="components/Review/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="470"><iframe src="components/Review/preview.html" loading="lazy" title="Review"></iframe></div></section>
+<section class="card" id="GlassStack"><div class="card-head"><b>GlassStack</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/GlassStack/README.md">README</a> · <a href="components/GlassStack/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="520"><iframe src="components/GlassStack/preview.html" loading="lazy" title="GlassStack"></iframe></div></section>
+<h3>Оверлеи</h3>
+<section class="card" id="Modal"><div class="card-head"><b>Modal</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/Modal/README.md">README</a> · <a href="components/Modal/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="0" data-h="520"><iframe src="components/Modal/preview.html" loading="lazy" title="Modal"></iframe></div></section>
+<section class="card" id="CookieBanner"><div class="card-head"><b>CookieBanner</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/CookieBanner/README.md">README</a> · <a href="components/CookieBanner/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="1100" data-h="380"><iframe src="components/CookieBanner/preview.html" loading="lazy" title="CookieBanner"></iframe></div></section>
+<h3>Страницы</h3>
+<section class="card" id="Landing"><div class="card-head"><b>Landing</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/Landing/README.md">README</a> · <a href="components/Landing/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="1440" data-h="4000"><iframe src="components/Landing/preview.html" loading="lazy" title="Landing"></iframe></div></section>
+<section class="card" id="Slides"><div class="card-head"><b>Slides</b><span><a href="https://github.com/pavelkatz-jes/just-esim-design-system/blob/main/components/Slides/README.md">README</a> · <a href="components/Slides/preview.html">открыть отдельно</a></span></div><div class="frame" data-w="2048" data-h="1330"><iframe src="components/Slides/preview.html" loading="lazy" title="Slides"></iframe></div></section>
+</main>
+<script>
+  // Превью шире колонки уменьшаются целиком: ширина макета задана в первой строке preview.html (@dsCard).
+  function fit() {
+    document.querySelectorAll('.frame').forEach(function (f) {
+      var ifr = f.querySelector('iframe'), w = +f.dataset.w, h = +f.dataset.h, box = f.clientWidth;
+      var lw = w || box, k = Math.min(1, box / lw);
+      ifr.style.width = lw + 'px'; ifr.style.height = h + 'px'; ifr.style.transform = 'scale(' + k + ')';
+      f.style.height = Math.round(h * k) + 'px';
+    });
+  }
+  window.addEventListener('resize', fit); fit();
+  document.querySelectorAll('.frame iframe').forEach(function (ifr) {
+    ifr.addEventListener('load', function () {
+      try {
+        var d = ifr.contentDocument, f = ifr.parentElement, need = d.documentElement.scrollHeight;
+        if (need > +f.dataset.h) { f.dataset.h = need; fit(); }
+      } catch (e) {}
+    });
+  });
+</script>
+</body>
+</html>

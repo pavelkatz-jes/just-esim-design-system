@@ -1,0 +1,133 @@
+<!-- @dsCard group="Страницы" height=4000 width=1440 page -->
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Landing — Just eSIM</title>
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../bundle.css">
+<script src="../lib/react.production.min.js"></script>
+<script src="../lib/react-dom.production.min.js"></script>
+<script src="../bundle.js"></script>
+<style>
+.pv { padding: 24px; }
+.pv-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.pv-col { display: flex; flex-direction: column; gap: 24px; }
+.pv-label { margin-bottom: 8px; color: var(--color-secondary); font-size: 14px; line-height: 20px; }
+.ref-lead { margin: 0 0 32px; color: var(--color-secondary); }
+.ref-foot { margin: 0; color: var(--color-secondary); text-align: center; }
+.money { padding: 32px 16px; text-align: center; }
+@media (min-width: 1024px) { .money { padding-bottom: 32px; } }
+.money p { max-width: 500px; margin: 0 auto 30px; padding: 0 8px; color: var(--color-secondary); }
+.money .jes-btn { max-width: 300px; margin: 0 auto; }
+.reviews { display: grid; grid-template-columns: 1fr; gap: 12px; }
+@media (min-width: 640px) { .reviews { gap: 16px; } }
+@media (min-width: 768px) { .reviews { gap: 24px; } }
+@media (min-width: 1024px) { .reviews { grid-template-columns: 1fr 1fr; } }
+.stay { text-align: center; }
+.stay img { display: block; width: 100%; max-width: 400px; margin: 0 auto 90px; }
+.stay .jes-btn { margin: 0 auto 56px; }
+@media (min-width: 768px) { .stay .jes-btn { margin-bottom: 80px; } }
+@media (min-width: 1024px) { .ref-h2, .ref-lead { text-align: center; } }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var J = window.JeS;
+var B = { "flagUs": "../../assets/Flags/us.svg", "flagRu": "../../assets/Flags/ru.svg", "flagDe": "../../assets/Flags/de.svg", "flagEs": "../../assets/Flags/es.png", "glassHero": "../../assets/Glass/glass-esim-hero.webp", "glassSquare": "../../assets/Glass/glass-esim-square.webp", "glassEsim": "../../assets/Glass/glass-esim.webp", "glassUs": "../../assets/Glass/glass-us.webp", "glassIl": "../../assets/Glass/glass-il.webp", "glassCg": "../../assets/Glass/glass-cg.webp", "bird": "../../assets/Photos/bird.webp", "pizza": "../../assets/Photos/pizza.webp", "ball": "../../assets/Photos/ball.webp", "cardCd": "../../assets/Photos/card-cd.webp", "cardNl": "../../assets/Photos/card-nl.webp" };
+var LINKS = [{ label: "150+ destinations", href: "#" }, { label: "How to install", href: "#" }, { label: "FAQ", href: "#" }];
+var EN = { code: "en", label: "English", flag: B.flagUs };
+var RU = { code: "ru", label: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439", flag: B.flagRu };
+function L(props) {
+  return /* @__PURE__ */ React.createElement("div", { className: "pv-label" }, props.children);
+}
+var ACTIVE = { country: "Congo Democratic Republic", meta: "Expires in 14 days", data: "11.2 GB", photo: B.cardCd };
+var EXPIRED = { state: "expired", country: "Netherlands", meta: "Expired May 23", photo: B.cardNl, plans: [{ label: "\u221E" }, { label: "10 GB" }, { label: "5 GB" }, { icon: "dots" }] };
+var FAQ = [
+  { question: "How consistent will my internet connection be?", answer: "We cooperate with local mobile operators with the widest coverage zone, meaning your internet connection will be stable since it is provided by our local partner." },
+  { question: "What do I do when running out of data?", answer: "You can easily prevent this problem by setting an automatic data increase. You will also receive a notification when you are approaching your data limit and need to update your data plan." },
+  { question: "Why is eSIM better than a physical SIM card from a local mobile operator?", answer: "No need to waste your time at a phone company booth to obtain a physical SIM card." },
+  { question: "Can I make phone calls using eSIM?", answer: "Our technology only allows you to access the internet, but you can always make free calls over the internet." },
+  { question: "How can I check whether my device supports an eSIM?", answer: "eSIM is supported by all current devices. If you have any doubts, simply send us your mobile phone model via our online chat line, and we can check it for you." }
+];
+var COLS = [
+  { title: "Helpful", links: [{ label: "Frequently Asked Questions", href: "#" }, { label: "List of Compatible Devices", href: "#" }, { label: "How to Install and Activate eSIM?", href: "#" }] },
+  { title: "Legal", links: [{ label: "Privacy policy", href: "#" }, { label: "Terms of Service", href: "#" }, { label: "Partnership Agreement", href: "#" }] },
+  { title: "For Partners", links: [{ label: "Just eSIM Integrations", href: "#" }, { label: "Become a partner", href: "#" }] }
+];
+function Widget() {
+  return /* @__PURE__ */ React.createElement(J.PurchaseWidget, null, /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 20 } }, /* @__PURE__ */ React.createElement(J.SelectField, { label: "Country or region", value: "Andorra" })), /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 8 } }, /* @__PURE__ */ React.createElement(J.Segmented, { label: "Duration", options: [{ value: "7", label: "7 days" }, { value: "14", label: "14 days" }, { value: "30", label: "30 days" }] })), /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 20 } }, /* @__PURE__ */ React.createElement(J.Segmented, { label: "Data", options: [{ value: "1", label: "1 GB" }, { value: "5", label: "5 GB" }, { value: "10", label: "10 GB" }] })), /* @__PURE__ */ React.createElement(J.Button, { block: true }, "Purchase for \u20AC3.5"));
+}
+function App() {
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(J.Header, { links: LINKS, language: { current: EN, options: [RU] }, cta: { label: "Download app", icon: "download" } }), /* @__PURE__ */ React.createElement(
+    J.Hero,
+    {
+      image: B.glassHero,
+      imageMobile: B.glassSquare,
+      title: /* @__PURE__ */ React.createElement(React.Fragment, null, "The ultimate", /* @__PURE__ */ React.createElement("br", null), "travel eSIM"),
+      lead: "Travel smarter and avoid paying expensive data roaming fees. Install Just eSIM in minutes and start saving in more than 150 destinations!",
+      aside: /* @__PURE__ */ React.createElement(Widget, null)
+    }
+  ), /* @__PURE__ */ React.createElement(J.Section, null, /* @__PURE__ */ React.createElement(J.GlassStack, { images: [B.glassUs, B.glassIl, B.glassCg], alts: ["US", "IL", "CG"] }), /* @__PURE__ */ React.createElement(J.SectionTitle, null, "One eSIM", /* @__PURE__ */ React.createElement("br", null), "The whole world"), /* @__PURE__ */ React.createElement(J.StoreButtons, null)), /* @__PURE__ */ React.createElement(J.Section, null, /* @__PURE__ */ React.createElement(J.FeatureGrid, null, /* @__PURE__ */ React.createElement(
+    J.FeatureCard,
+    {
+      image: B.bird,
+      imagePosition: "start",
+      title: /* @__PURE__ */ React.createElement(React.Fragment, null, "Purchase eSIM\u2019s", /* @__PURE__ */ React.createElement("br", null), "in just one minute"),
+      description: /* @__PURE__ */ React.createElement(React.Fragment, null, "Simple installation,", /* @__PURE__ */ React.createElement("br", null), "automatic activation"),
+      action: /* @__PURE__ */ React.createElement(J.Button, { variant: "secondary", icon: "lightbulb", block: true }, "Learn how to install")
+    }
+  ), /* @__PURE__ */ React.createElement(J.FeatureCard, null, /* @__PURE__ */ React.createElement("div", { style: { marginBottom: 40 } }, /* @__PURE__ */ React.createElement(J.ProductCardStack, { cards: [ACTIVE, EXPIRED] })), /* @__PURE__ */ React.createElement(J.ListRows, { rows: [{ label: "Track your expenses", icon: "pie-chart" }, { label: "Limit notifications", icon: "bell" }, { label: "50MB lifesaver", hint: "when out of data", icon: "first-aid" }] })), /* @__PURE__ */ React.createElement(J.FeatureCard, { align: "left", balance: true, cornerIcon: "devices", image: B.pizza, imageWidth: 346, title: "Share the internet with your family and friends", description: "Use your laptop, tablet, or another device to access the internet" }), /* @__PURE__ */ React.createElement(
+    J.FeatureCard,
+    {
+      align: "left",
+      image: B.ball,
+      imageWidth: 297,
+      overlap: 60,
+      title: "Get the fastest customer support",
+      features: [{ icon: "clock", label: "Available 24/7" }, { icon: "person", label: "Real people, no bots" }],
+      action: /* @__PURE__ */ React.createElement(J.Button, { icon: "download", block: true }, "Download app")
+    }
+  ))), /* @__PURE__ */ React.createElement(J.Section, null, /* @__PURE__ */ React.createElement(J.SectionTitle, null, "eSIM vs", /* @__PURE__ */ React.createElement("br", null), "physical SIM"), /* @__PURE__ */ React.createElement(J.Checklist, { items: ["Keep your regular SIM installed", "Cannot be lost or stolen", "Multiple plans on one device", "Environmentally friendly"] })), /* @__PURE__ */ React.createElement(J.Section, { id: "faq" }, /* @__PURE__ */ React.createElement(J.Faq, { items: FAQ, action: /* @__PURE__ */ React.createElement(J.Button, { href: "#" }, "See all answers") })), /* @__PURE__ */ React.createElement(J.Section, null, /* @__PURE__ */ React.createElement(J.SectionTitle, { align: "left", className: "ref-h2" }, /* @__PURE__ */ React.createElement(J.GradientText, null, "Earn 3 \u20AC"), /* @__PURE__ */ React.createElement("br", null), "with each friend"), /* @__PURE__ */ React.createElement("p", { className: "text-b ref-lead" }, "Copy ", /* @__PURE__ */ React.createElement("b", null, "your unique referral"), " code and share it with your friends"), /* @__PURE__ */ React.createElement(J.ReferralCards, null), /* @__PURE__ */ React.createElement("p", { className: "text-lg ref-foot" }, /* @__PURE__ */ React.createElement("b", null, "Log in"), " to your Just eSIM account and go to the ", /* @__PURE__ */ React.createElement("b", null, "Get 3 \u20AC"), " section in your app")), /* @__PURE__ */ React.createElement(J.Section, null, /* @__PURE__ */ React.createElement(J.Card, { className: "money" }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "center", marginBottom: 12 } }, /* @__PURE__ */ React.createElement(J.Icon, { name: "smile" })), /* @__PURE__ */ React.createElement("div", { className: "text-big", style: { marginBottom: 24, padding: "0 8px", color: "var(--ink)" } }, "Money Back Guarantee"), /* @__PURE__ */ React.createElement("p", { className: "text-b" }, /* @__PURE__ */ React.createElement("b", null, "We will refund"), " your money if you use ", /* @__PURE__ */ React.createElement("b", null, "less than 10%"), " of your data or did not activate your eSIM during a six-month period"), /* @__PURE__ */ React.createElement(J.Button, { icon: "download", block: true }, "Download app"))), /* @__PURE__ */ React.createElement(J.Section, null, /* @__PURE__ */ React.createElement(J.SectionTitle, null, "What our users say"), /* @__PURE__ */ React.createElement("div", { className: "reviews" }, /* @__PURE__ */ React.createElement(
+    J.Review,
+    {
+      flag: B.flagRu,
+      name: "\u0415\u043A\u0430\u0442\u0435\u0440\u0438\u043D\u0430",
+      country: "\u0420\u043E\u0441\u0441\u0438\u044F",
+      paragraphs: ["\u042F \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0442\u043E\u0440 \u0430\u0432\u0442\u043E\u0440\u0441\u043A\u0438\u0445 \u0442\u0443\u0440\u043E\u0432 \u0438 \u0441\u0430\u043C\u0430 \u0447\u0430\u0441\u0442\u043E \u043F\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0443\u044E. \u041A\u043B\u0438\u0435\u043D\u0442\u0430\u043C \u0432\u0441\u0435\u0433\u0434\u0430 \u0440\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0443\u044E Just eSIM, \u0442\u0430\u043A \u043A\u0430\u043A \u044D\u0442\u043E \u0431\u044B\u0441\u0442\u0440\u043E \u0438 \u0443\u0434\u043E\u0431\u043D\u043E, \u043D\u0438\u043A\u043E\u0433\u0434\u0430 \u043D\u0435 \u0431\u044B\u043B\u043E \u043F\u0440\u043E\u0431\u043B\u0435\u043C \u0441 \u043F\u043E\u0434\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435\u043C."],
+      translation: { name: "Ekaterina", country: "Russia", paragraphs: ["I\u2019m a tour organizer and travel a lot myself. I always recommend Just eSIM to my clients because it\u2019s quick, convenient, and I\u2019ve never had any connection issues."] }
+    }
+  ), /* @__PURE__ */ React.createElement(
+    J.Review,
+    {
+      flag: B.flagUs,
+      name: "Daniela",
+      country: "USA",
+      paragraphs: ["The internet is fast and stable, no unexpected drop-offs. For me, eSIM is the most convenient format."]
+    }
+  ), /* @__PURE__ */ React.createElement(
+    J.Review,
+    {
+      flag: B.flagDe,
+      name: "Maria",
+      country: "Deutschland",
+      paragraphs: ["Mir hat es richtig gut gefallen! Ich kann es nur empfehlen \u2013 alles ist verst\xE4ndlich und die Manager erkl\xE4ren Schritt f\xFCr Schritt, was man machen muss."],
+      translation: { name: "Maria", country: "Germany", paragraphs: ["I absolutely loved it! Highly recommend \u2014 everything is clear, and the managers guide you step by step through the whole process."] }
+    }
+  ), /* @__PURE__ */ React.createElement(
+    J.Review,
+    {
+      flag: B.flagEs,
+      name: "Javier",
+      country: "Espa\xF1a",
+      paragraphs: ["Descubr\xED la app Just eSIM hace un a\xF1o y desde entonces siempre la uso. Es intuitiva, r\xE1pida y funciona sin complicaciones."],
+      translation: { name: "Javier", country: "Spain", paragraphs: ["I discovered the Just eSIM app a year ago and have used it ever since. It is intuitive, fast and works without complications."] }
+    }
+  ))), /* @__PURE__ */ React.createElement(J.Section, null, /* @__PURE__ */ React.createElement("div", { className: "stay" }, /* @__PURE__ */ React.createElement("img", { src: B.glassEsim, alt: "JeS" }), /* @__PURE__ */ React.createElement("div", { className: "text-big", style: { marginBottom: 20, color: "var(--ink)" } }, "Stay connected"), /* @__PURE__ */ React.createElement(J.Button, { icon: "download" }, "Download app"), /* @__PURE__ */ React.createElement(J.SocialLinks, { links: [{ network: "telegram", href: "#" }, { network: "tiktok", href: "#" }, { network: "instagram", href: "#" }] }))), /* @__PURE__ */ React.createElement(J.Footer, { columns: COLS, copyright: "2026 \xA9 All Rights Reserved", email: "help@justesim.com", version: "v2608.1.2" }));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));
+</script>
+</body>
+</html>

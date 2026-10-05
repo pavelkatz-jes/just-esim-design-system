@@ -1,0 +1,39 @@
+<!-- @dsCard group="Бренд" height=190 -->
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LogoTile — Just eSIM</title>
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../bundle.css">
+<script src="../lib/react.production.min.js"></script>
+<script src="../lib/react-dom.production.min.js"></script>
+<script src="../bundle.js"></script>
+<style>
+.pv { padding: 24px; }
+.pv-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.pv-col { display: flex; flex-direction: column; gap: 24px; }
+.pv-label { margin-bottom: 8px; color: var(--color-secondary); font-size: 14px; line-height: 20px; }
+.dark-strip { display: flex; gap: 16px; align-items: center; padding: 24px; background: var(--surface-dark); border-radius: 24px; }
+.dark-strip .pv-label { color: var(--text-on-dark-secondary); margin: 0 8px 0 0; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var J = window.JeS;
+var B = { "flagUs": "../../assets/Flags/us.svg", "flagRu": "../../assets/Flags/ru.svg", "flagDe": "../../assets/Flags/de.svg", "flagEs": "../../assets/Flags/es.png", "glassHero": "../../assets/Glass/glass-esim-hero.webp", "glassSquare": "../../assets/Glass/glass-esim-square.webp", "glassEsim": "../../assets/Glass/glass-esim.webp", "glassUs": "../../assets/Glass/glass-us.webp", "glassIl": "../../assets/Glass/glass-il.webp", "glassCg": "../../assets/Glass/glass-cg.webp", "bird": "../../assets/Photos/bird.webp", "pizza": "../../assets/Photos/pizza.webp", "ball": "../../assets/Photos/ball.webp", "cardCd": "../../assets/Photos/card-cd.webp", "cardNl": "../../assets/Photos/card-nl.webp" };
+var LINKS = [{ label: "150+ destinations", href: "#" }, { label: "How to install", href: "#" }, { label: "FAQ", href: "#" }];
+var EN = { code: "en", label: "English", flag: B.flagUs };
+var RU = { code: "ru", label: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439", flag: B.flagRu };
+function L(props) {
+  return /* @__PURE__ */ React.createElement("div", { className: "pv-label" }, props.children);
+}
+function App() {
+  return /* @__PURE__ */ React.createElement("div", { className: "pv pv-row", style: { gap: 32 } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(L, null, "\u041F\u043B\u0438\u0442\u043A\u0430 48 \xB7 56 \u0438 \u0437\u043D\u0430\u043A"), /* @__PURE__ */ React.createElement("div", { className: "pv-row" }, /* @__PURE__ */ React.createElement(J.LogoTile, { size: 48 }), /* @__PURE__ */ React.createElement(J.LogoTile, { size: 56 }), /* @__PURE__ */ React.createElement(J.LogoMark, { height: 48 }))), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(L, null, "\u041D\u0430 \u0442\u0451\u043C\u043D\u043E\u043C \u2014 \u0431\u0435\u043B\u044B\u0439 \u0437\u043D\u0430\u043A, \u043F\u043B\u0438\u0442\u043A\u0430 surface-grey"), /* @__PURE__ */ React.createElement("div", { className: "dark-strip" }, /* @__PURE__ */ React.createElement(J.LogoTile, { size: 48, tone: "dark" }), /* @__PURE__ */ React.createElement(J.LogoTile, { size: 56, tone: "dark" }), /* @__PURE__ */ React.createElement(J.LogoMark, { tone: "white", height: 48 }))));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));
+</script>
+</body>
+</html>

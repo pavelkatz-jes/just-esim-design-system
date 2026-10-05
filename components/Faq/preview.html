@@ -1,0 +1,43 @@
+<!-- @dsCard group="Контент" height=640 -->
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faq — Just eSIM</title>
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../bundle.css">
+<script src="../lib/react.production.min.js"></script>
+<script src="../lib/react-dom.production.min.js"></script>
+<script src="../bundle.js"></script>
+<style>
+.pv { padding: 24px; }
+.pv-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.pv-col { display: flex; flex-direction: column; gap: 24px; }
+.pv-label { margin-bottom: 8px; color: var(--color-secondary); font-size: 14px; line-height: 20px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var J = window.JeS;
+var B = { "flagUs": "../../assets/Flags/us.svg", "flagRu": "../../assets/Flags/ru.svg", "flagDe": "../../assets/Flags/de.svg", "flagEs": "../../assets/Flags/es.png", "glassHero": "../../assets/Glass/glass-esim-hero.webp", "glassSquare": "../../assets/Glass/glass-esim-square.webp", "glassEsim": "../../assets/Glass/glass-esim.webp", "glassUs": "../../assets/Glass/glass-us.webp", "glassIl": "../../assets/Glass/glass-il.webp", "glassCg": "../../assets/Glass/glass-cg.webp", "bird": "../../assets/Photos/bird.webp", "pizza": "../../assets/Photos/pizza.webp", "ball": "../../assets/Photos/ball.webp", "cardCd": "../../assets/Photos/card-cd.webp", "cardNl": "../../assets/Photos/card-nl.webp" };
+var LINKS = [{ label: "150+ destinations", href: "#" }, { label: "How to install", href: "#" }, { label: "FAQ", href: "#" }];
+var EN = { code: "en", label: "English", flag: B.flagUs };
+var RU = { code: "ru", label: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439", flag: B.flagRu };
+function L(props) {
+  return /* @__PURE__ */ React.createElement("div", { className: "pv-label" }, props.children);
+}
+var ITEMS = [
+  { question: "How consistent will my internet connection be?", answer: "We cooperate with local mobile operators with the widest coverage zone, meaning your internet connection will be stable since it is provided by our local partner." },
+  { question: "What do I do when running out of data?", answer: "You can easily prevent this problem by setting an automatic data increase. You will also receive a notification when you are approaching your data limit and need to update your data plan. When you have zero data left, you will still be able to have access to the internet, but the speed will be reduced to 32 KB/s." },
+  { question: "Can I make phone calls using eSIM?", answer: "Our technology only allows you to access the internet, but you can always make free calls over the internet." },
+  { question: "How can I check whether my device supports an eSIM?", answer: /* @__PURE__ */ React.createElement(React.Fragment, null, "eSIM is supported by all current devices. If you have any doubts, simply send us your mobile phone model via our ", /* @__PURE__ */ React.createElement("a", { href: "#" }, "online chat"), ", and we can check it for you.") }
+];
+function App() {
+  return /* @__PURE__ */ React.createElement("div", { className: "pv", style: { maxWidth: 820 } }, /* @__PURE__ */ React.createElement(J.Faq, { items: ITEMS, defaultOpen: 1, action: /* @__PURE__ */ React.createElement(J.Button, { href: "#" }, "See all answers") }));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "just-esim-design-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Дизайн-система Just eSIM: токены, шрифт, ассеты, React-компоненты и правила бренда",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pavelkatz-jes/just-esim-design-system.git"
+  },
+  "homepage": "https://pavelkatz-jes.github.io/just-esim-design-system/",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "esbuild": "^0.25.12",
+    "typescript": "~5.6.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
